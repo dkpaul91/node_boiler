@@ -1,4 +1,5 @@
 // import * as path from 'path';
+import DemoModule from '../modules/DemoModule';
 
 const calcTime = (offset: any) => {
     // create Date object for current location
@@ -19,9 +20,11 @@ const calcTime = (offset: any) => {
 
 module.exports = function (app: any) {
     // const assetPath = path.join(__dirname, '../../assets');
+    const demoModule = new DemoModule();
 
     app.globals = {};
 
     app.globals.calcTime = calcTime;
+    app.globals.demoModule = demoModule;
    
 }
